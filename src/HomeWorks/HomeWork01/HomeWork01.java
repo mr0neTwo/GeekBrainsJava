@@ -6,11 +6,14 @@ import java.util.Scanner;
 public class HomeWork01 {
 
     public static void CheckHomeWork01(){
-        // Task01();
-        // Task02();
+        Task01();
+        Task02();
         Task03();
     }
 
+    /**
+     * Вычислить n-ое треугольного число (сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
+     */
     public static void Task01() {
         int number = GetIntegerFormConsole("Введите число для расчета n-го треугольного чилса: ");
         int triangularNumber = CalculateTriangularNumber(number);
@@ -23,6 +26,9 @@ public class HomeWork01 {
         System.out.println(message);
     }
 
+    /**
+     * Вывести все простые числа от 1 до 1000
+     */
     public static void Task02(){
         int from = 1;
         int to = 1000;
@@ -32,8 +38,11 @@ public class HomeWork01 {
     }
 
 
+    /**
+     * Реализовать простой калькулятор
+     */
     public static void Task03(){
-        System.out.print("Калькулятор");
+        System.out.println("Калькулятор");
         System.out.print("Введите через пробел число оператор число, напирмер, \"2 * 2\"\n");
         Scanner input = new Scanner(System.in);
 
