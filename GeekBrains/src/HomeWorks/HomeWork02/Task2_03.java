@@ -35,19 +35,19 @@ public class Task2_03 {
 
         File file = new File(_dataBaseTXTPath);
         FileInputStream inputStream;
-        String str;
+        String dataString;
 
         try {
             inputStream = new FileInputStream(file);
             byte data[] = new byte[inputStream.available()];
             inputStream.read(data);
-            str = new String(data);
+            dataString = new String(data);
             inputStream.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException error) {
+            throw new RuntimeException(error);
         }
 
-        return str;
+        return dataString;
     }
 
     // На минуту вообразим, что parserJSON и objectJSON не существует)
