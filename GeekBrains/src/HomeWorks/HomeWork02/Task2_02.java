@@ -19,7 +19,7 @@ public class Task2_02 {
         int[] sortedArray = bubbleSorting(array); // не знаю зачем вернул отсортированный массив, как будто так правильней)
     }
 
-    public int[] bubbleSorting(int[] array){
+    private int[] bubbleSorting(int[] array){
 
         _operationLogger.addInfoLog(Arrays.toString(array));
 

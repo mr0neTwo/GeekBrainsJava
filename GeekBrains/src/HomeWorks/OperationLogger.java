@@ -6,13 +6,12 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class OperationLogger {
-    Logger logger;
-    FileHandler fh;
-    SimpleFormatter formatter;
+    private final Logger logger;
 
     public OperationLogger(String loggerName, String fileName) {
         logger = Logger.getLogger(loggerName);
-        formatter = new SimpleFormatter();
+        SimpleFormatter formatter = new SimpleFormatter();
+        FileHandler fh;
         try {
             fh = new FileHandler(fileName);
         } catch (IOException e) {

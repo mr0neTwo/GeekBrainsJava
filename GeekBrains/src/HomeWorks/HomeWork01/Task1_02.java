@@ -15,7 +15,7 @@ public class Task1_02 {
         printSimpleNumbers(from, to);
     }
 
-    public void printSimpleNumbers(int from, int to) {
+    private void printSimpleNumbers(int from, int to) {
 
         ArrayList<Integer> dividers = new ArrayList<>();
         StringBuilder result = new StringBuilder();

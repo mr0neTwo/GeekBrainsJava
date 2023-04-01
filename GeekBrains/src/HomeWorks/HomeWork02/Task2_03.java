@@ -50,6 +50,7 @@ public class Task2_03 {
         return str;
     }
 
+    // На минуту вообразим, что parserJSON и objectJSON не существует)
     private List<Map<String, String>> parseStringToMapper(String dataString){
         Pattern pattern = Pattern.compile("\\{.+?\\}");
         Matcher matcher = pattern.matcher(dataString);

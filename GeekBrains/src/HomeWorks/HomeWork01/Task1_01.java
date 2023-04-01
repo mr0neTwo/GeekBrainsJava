@@ -20,7 +20,7 @@ public class Task1_01 {
         System.out.println(message);
     }
 
-    public int calculateTriangularNumber(int number) {
+    private int calculateTriangularNumber(int number) {
         if (number < 1) {
             return 0;
         }
@@ -32,7 +32,7 @@ public class Task1_01 {
         return result;
     }
 
-    public int calculateFactorial(int number) {
+    private int calculateFactorial(int number) {
         if (number < 1) {
             return 0;
         }

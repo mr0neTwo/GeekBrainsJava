@@ -16,7 +16,7 @@ public class Task2_01 {
         System.out.println(request);
     }
 
-    public String gerSQLRequestStudents(String jsonString) {
+    private String gerSQLRequestStudents(String jsonString) {
         String sqlRequest = "select * from students";
 
         JSONObject parameters = new JSONObject(jsonString);

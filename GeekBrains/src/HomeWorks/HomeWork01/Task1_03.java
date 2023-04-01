@@ -54,14 +54,15 @@ public class Task1_03 {
         int result = simpleCalculator(number1, operator, number2);
 
         String message = String.format("%s %s %s = %S", number1, operator, number2, result);
+        operationLogger.addInfoLog(message);
         System.out.print(message);
     }
 
-    public void sayError() {
+    private void sayError() {
         System.out.print("Некоректный ввод!\nПопробуйте снова:");
     }
 
-    public int simpleCalculator(int number1, char operator, int number2) {
+    private int simpleCalculator(int number1, char operator, int number2) {
 
         switch (operator) {
             case '*' -> {
