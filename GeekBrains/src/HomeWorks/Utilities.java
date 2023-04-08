@@ -1,6 +1,6 @@
 package HomeWorks;
 
-import java.util.List;
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.StringJoiner;
@@ -46,5 +46,14 @@ public class Utilities {
         int[] randomArray = random.ints(0, 100).limit(length).toArray();
 
         return randomArray;
+    }
+
+    public static LinkedList<Integer> makeRandomLinkedList(int length){
+        LinkedList<Integer> list = new LinkedList<>();
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            list.add(random.nextInt(0, 100));
+        }
+        return list;
     }
 }
