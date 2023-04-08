@@ -93,6 +93,7 @@ public class Task1_03 {
 
     private void undoLastOperation(){
         currentResult.pop();
+        operationLogger.addInfoLog("Отмена последней операции");
     }
 
     private void sayError() {
