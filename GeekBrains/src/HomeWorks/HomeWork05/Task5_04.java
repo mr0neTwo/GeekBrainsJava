@@ -1,18 +1,21 @@
 package HomeWorks.HomeWork05;
 
-public class Chess {
-    public static void main(String[] args) {
-        int[][] board = new int[8][8];
+public class Task5_04 {
+    
+    private final int maxValue = 8;
+    private final int[][] board = new int[maxValue][maxValue];
+    public void start() {
+        
        
-        for (int row = 0; row < 8; row++) {
+        for (int row = 0; row < maxValue; row++) {
             if (row % 2 == 0) {
-                for (int col = 0; col < 8; col++) {
+                for (int col = 0; col < maxValue; col++) {
                     if (isSafe(board, row, col)) {
                         board[row][col] = 1;
                     }
                 }
             } else {
-                for (int col = 7; col >= 0; col--) {
+                for (int col = maxValue - 1; col >= 0; col--) {
                     if (isSafe(board, row, col)) {
                         board[row][col] = 1;
                     }
@@ -20,10 +23,13 @@ public class Chess {
             }
             
         }
+        
+        printBoard();
+    }
 
-        // выводим получившуюся доску
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+    private void printBoard() {
+        for (int i = 0; i < maxValue; i++) {
+            for (int j = 0; j < maxValue; j++) {
                 System.out.print(board[i][j] + " ");
             }
             System.out.println();
@@ -31,18 +37,18 @@ public class Chess {
     }
 
     // функция проверяет, что ферзь не бьет других ферзей
-    static boolean isSafe(int[][] board, int row, int col) {
+    private boolean isSafe(int[][] board, int row, int col) {
         int i, j;
 
         // проверяем строку
-        for (i = 0; i < 8; i++) {
+        for (i = 0; i < maxValue; i++) {
             if (board[row][i] == 1) {
                 return false;
             }
         }
 
         // проверяем столбец
-        for (i = 0; i < 8; i++) {
+        for (i = 0; i < maxValue; i++) {
             if (board[i][col] == 1) {
                 return false;
             }
@@ -55,19 +61,19 @@ public class Chess {
             }
         }
 
-        for (i = row, j = col; i < 8 && j < 8; i++, j++) {
+        for (i = row, j = col; i < maxValue && j < maxValue; i++, j++) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
 
-        for (i = row, j = col; j >= 0 && i < 8; i++, j--) {
+        for (i = row, j = col; j >= 0 && i < maxValue; i++, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
 
-        for (i = row, j = col; j < 8 && i >= 0; i--, j++) {
+        for (i = row, j = col; j < maxValue && i >= 0; i--, j++) {
             if (board[i][j] == 1) {
                 return false;
             }

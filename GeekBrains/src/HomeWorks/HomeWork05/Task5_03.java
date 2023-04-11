@@ -1,11 +1,9 @@
 package HomeWorks.HomeWork05;
 
-import java.util.Arrays;
-
 import static HomeWorks.Utilities.makeRandomArray;
 import static HomeWorks.Utilities.printArrayInt;
 
-public class Task05_3 {
+public class Task5_03 {
 
     public void start(){
         int[] array = makeRandomArray(20);
