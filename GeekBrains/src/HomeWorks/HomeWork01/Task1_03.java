@@ -5,8 +5,6 @@ import HomeWorks.OperationLogger;
 import java.util.Scanner;
 import java.util.Stack;
 
-import static HomeWorks.Utilities.GetIntegerFormConsole;
-
 /**
  * Реализовать простой калькулятор
  */
