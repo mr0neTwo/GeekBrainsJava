@@ -7,18 +7,24 @@ import java.util.StringJoiner;
 
 public class Utilities {
 
-    public static int GetIntegerFormConsole(String massage){
-        Scanner input = new Scanner(System.in);
+    public static int GetIntegerFormConsole(Scanner scanner, String massage){
         System.out.print(massage);
-        while (!input.hasNextInt()){
+        while (!scanner.hasNextInt()){
             System.out.print("Некоректный ввод!\nВведите целое число:");
-            input.next();
+            scanner.next();
         }
 
-        int result = input.nextInt();
-        input.close();
+        return scanner.nextInt();
+    }
 
-        return result;
+    public static float GetFloatFormConsole(Scanner scanner, String massage){
+        System.out.print(massage);
+        while (!scanner.hasNextInt()){
+            System.out.print("Некоректный ввод!\nВведите число:");
+            scanner.next();
+        }
+
+        return scanner.nextFloat();
     }
 
     public static <T> void printArrayGeneric(T[] array) {

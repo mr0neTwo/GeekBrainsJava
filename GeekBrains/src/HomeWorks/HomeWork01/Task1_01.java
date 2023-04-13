@@ -1,5 +1,7 @@
 package HomeWorks.HomeWork01;
 
+import java.util.Scanner;
+
 import static HomeWorks.Utilities.GetIntegerFormConsole;
 
 /**
@@ -7,14 +9,16 @@ import static HomeWorks.Utilities.GetIntegerFormConsole;
  */
 public class Task1_01 {
 
+    private final Scanner scanner = new Scanner(System.in);
+
     public void start() {
 
-        int number = GetIntegerFormConsole("Введите число для расчета n-го треугольного чилса: ");
+        int number = GetIntegerFormConsole(scanner, "Введите число для расчета n-го треугольного чилса: ");
         int triangularNumber = calculateTriangularNumber(number);
         String message = String.format("Теругольноче число числа %s равно %s", number, triangularNumber);
         System.out.println(message);
 
-        number = GetIntegerFormConsole("Введите число для расчета факториала: ");
+        number = GetIntegerFormConsole(scanner, "Введите число для расчета факториала: ");
         int factorialNumber = calculateFactorial(number);
         message = String.format("Факториал числа %s равно %s", number, factorialNumber);
         System.out.println(message);
