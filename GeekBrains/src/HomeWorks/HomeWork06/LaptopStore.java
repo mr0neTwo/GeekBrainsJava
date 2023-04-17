@@ -1,6 +1,5 @@
 package HomeWorks.HomeWork06;
 
-import javax.xml.transform.Result;
 import java.util.*;
 
 import static HomeWorks.Utilities.GetFloatFormConsole;
