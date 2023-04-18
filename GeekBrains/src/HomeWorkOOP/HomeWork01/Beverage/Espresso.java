@@ -18,6 +18,7 @@ public class Espresso extends Beverage {
 
     @Override
     public String toString() {
-        return "Espresso: " + super.toString() + ", intensity=" + intensity;
+        return String.format("%s [volume: %.2f, temperature: %.2f, price: %.2f, intensity: %d ]", getName(), getVolume(), getTemperature(),
+                getPrice(), intensity);
     }
 }

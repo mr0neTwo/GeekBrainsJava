@@ -19,6 +19,7 @@ public class Americano extends Beverage {
 
     @Override
     public String toString() {
-        return "Americano: " + super.toString() + ", hasMilk=" + hasMilk;
+        return String.format("%s [volume: %.2f, temperature: %.2f, price: %.2f, hasMilk: %b ]", getName(), getVolume(), getTemperature(),
+                getPrice(), hasMilk);
     }
 }

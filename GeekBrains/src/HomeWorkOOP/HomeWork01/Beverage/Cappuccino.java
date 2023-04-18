@@ -19,6 +19,7 @@ public class Cappuccino extends Beverage {
 
     @Override
     public String toString() {
-        return "Cappuccino: " + super.toString() + ", foamThickness=" + foamThickness;
+        return String.format("%s [volume: %.2f, temperature: %.2f, price: %.2f, foamThickness: %d ]", getName(), getVolume(), getTemperature(),
+                getPrice(), foamThickness);
     }
 }

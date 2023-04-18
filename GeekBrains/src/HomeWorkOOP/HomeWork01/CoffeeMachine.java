@@ -10,7 +10,7 @@ class CoffeeMachine {
     
     private double amount;
     
-    public void sellBeverage(String name) {
+    public void sellBeverage(String name, double money) {
 
         Beverage beverage = getBeverage(name);
 
@@ -19,20 +19,19 @@ class CoffeeMachine {
             return;
         }
         
-        double change = getTotalMoney() - beverage.getPrice();
+        double change = money - beverage.getPrice();
         if (change < 0) {
             System.out.println("Не хватает денег для покупки напитка.");
             return;
         }
         
-        System.out.println("Вы купили напиток " + beverage.getName() + " за " + beverage.getPrice() + " рублей.");
+        System.out.printf("Вы купили напиток %s за %.2f рублей.", beverage.getName(),  beverage.getPrice());
         if (change > 0) {
-            System.out.println("Ваша сдача: " + change + " рублей.");
+            System.out.printf("Ваша сдача: %.2f рублей.", change);
         }
         
         amount += beverage.getPrice();
-
-        // Удалить напиток из списка напитков автомата
+        
         beverages.remove(beverage);
     }
 
@@ -46,7 +45,7 @@ class CoffeeMachine {
         return null;
     }
 
-    private double getTotalMoney() {
+    public double getTotalMoney() {
         return amount;
     }
 

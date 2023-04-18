@@ -18,6 +18,6 @@ public class Bread extends Product {
 
     @Override
     public String toString() {
-        return "Bread [name=" + getName() + ", price=" + getCost() + ", type=" + type + "]";
+        return String.format("Bread [name: '%s', price: %d, type: %s]", getName(), getCost(), type);
     }
 }

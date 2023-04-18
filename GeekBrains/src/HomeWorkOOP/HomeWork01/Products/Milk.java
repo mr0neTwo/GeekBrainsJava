@@ -18,6 +18,6 @@ public class Milk extends Product {
 
     @Override
     public String toString() {
-        return "Milk [name=" + getName() + ", price=" + getCost() + ", fatContent=" + fatContent + "]";
+        return String.format("Milk [name: '%s', price: %d, fatContent: %.1f]", getName(), getCost(), fatContent);
     }
 }

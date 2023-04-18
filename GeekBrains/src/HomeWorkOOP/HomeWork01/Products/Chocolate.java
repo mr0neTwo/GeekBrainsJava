@@ -18,7 +18,7 @@ public class Chocolate extends Product {
 
     @Override
     public String toString() {
-        return "Chocolate [name=" + getName() + ", price=" + getCost() + ", flavor=" + flavor + "]";
+        return String.format("Chocolate [name: '%s', price: %d, flavor: %s]", getName(), getCost(), flavor);
     }
 }
 

@@ -17,44 +17,63 @@ import HomeWorkOOP.HomeWork01.Products.*;
 public class HomeWork01 {
 
     public static void main(String[] args) {
-        VendingMachine vendingMachine = new VendingMachine();
-        vendingMachine
-                .addProduct(new Product("Cheese", 300))
-                .addProduct(new Product("Water", 10))
-                .addProduct(new Product("Wine", 330))
-                .addProduct(new Yougurt("Danone", 300, "Sweet"))
-                .addProduct(new Perfume("Si", 6500, "Dior" ))
-                .addProduct(new Chocolate("Dark Chocolate", 150, "Bitter"))
-                .addProduct(new Milk("Milk 2.5%", 90, 2.5))
-                .addProduct(new Bread("Rye bread", 45, "Rye"));
+        FirstTask();
+        SecondTask();
+    }
 
-        for (Product product: vendingMachine.getProducts()) {
-            System.out.println(product);
-        }
-        
-        System.out.println();
-        
-        Product found = vendingMachine.findProduct("Water");
-        System.out.println(found.toString());
-        
-        Product sold = vendingMachine.sellProduct(found);
-        System.out.println(vendingMachine.getAmount());
-
-        System.out.println();
-        for (Product product: vendingMachine.getProducts()) {
-            System.out.println(product);
-        }
-
+    private static void SecondTask() {
         CoffeeMachine machine = new CoffeeMachine();
         machine.addBeverage(new Espresso("Espresso", 0.3, 65, 2.5, 10));
         machine.addBeverage(new Americano("Americano", 0.2, 75, 3.0, false));
         machine.addBeverage(new Latte("Latte", 0.3, 60, 3.5, 70));
         machine.addBeverage(new Cappuccino("Cappuccino", 0.3, 65, 4.0, 15));
 
-        // Проверяем, что напитки добавлены в автомат
+
+        PrintAllBeverages(machine);
+        System.out.println();
+        
+        machine.sellBeverage("Americano", 100);
+        PrintAllBeverages(machine);
+        
+        System.out.printf("Всего денег в атомате: %.1f", machine.getTotalMoney());
+    }
+
+    private static void PrintAllBeverages(CoffeeMachine machine) {
         System.out.println("Кофейный автомат содержит следующие напитки:");
         for (Beverage beverage : machine.getBeverages()) {
             System.out.println(beverage);
+        }
+    }
+
+    private static void FirstTask() {
+        VendingMachine vendingMachine = new VendingMachine();
+        vendingMachine
+                .addProduct(new Product("Cheese", 300))
+                .addProduct(new Product("Water", 10))
+                .addProduct(new Product("Wine", 330))
+                .addProduct(new Yogurt("Danone", 300, "Sweet"))
+                .addProduct(new Perfume("Si", 6500, "Dior" ))
+                .addProduct(new Chocolate("Dark Chocolate", 150, "Bitter"))
+                .addProduct(new Milk("Milk 2.5%", 90, 2.5))
+                .addProduct(new Bread("Rye bread", 45, "Rye"));
+
+        PrintAllProduct(vendingMachine);
+
+        System.out.println();
+
+        Product found = vendingMachine.findProduct("Water");
+        System.out.println(found.toString());
+
+        Product sold = vendingMachine.sellProduct(found);
+        System.out.println(vendingMachine.getAmount());
+
+        System.out.println();
+        PrintAllProduct(vendingMachine);
+    }
+
+    private static void PrintAllProduct(VendingMachine vendingMachine) {
+        for (Product product: vendingMachine.getProducts()) {
+            System.out.println(product);
         }
     }
 }

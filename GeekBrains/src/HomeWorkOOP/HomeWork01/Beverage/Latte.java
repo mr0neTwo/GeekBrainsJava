@@ -19,6 +19,7 @@ public class Latte extends Beverage {
 
     @Override
     public String toString() {
-        return "Latte: " + super.toString() + ", milkPercentage=" + milkPercentage;
+        return String.format("%s [volume: %.2f, temperature: %.2f, price: %.2f, milkPercentage: %d ]", getName(), getVolume(), getTemperature(),
+                getPrice(), milkPercentage);
     }
 }
