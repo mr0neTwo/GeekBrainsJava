@@ -1,7 +1,7 @@
 package HomeWorkOOP.HomeWork02;
 
 public abstract class Animal implements ISay {
-    private String name;
+    private final String name;
 
     public Animal(String name) {
         this.name = name;

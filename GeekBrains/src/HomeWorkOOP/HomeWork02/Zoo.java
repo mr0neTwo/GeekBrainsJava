@@ -11,21 +11,13 @@ public class Zoo {
     public void setRadio(Radio radio) {
         this.radio = radio;
     }
-
-    public List<Animal> getAnimalList() {
-        return animalList;
-    }
     
-    public  Zoo addAnimal(Animal animal){
+    public void addAnimal(Animal animal){
         animalList.add(animal);
-        return this;
     }
     
     public List<ISay> getSayble(){
-        List<ISay> saybleList = new ArrayList<>();
-        for (Animal animal : animalList) {
-            saybleList.add(animal);
-        }
+        List<ISay> saybleList = new ArrayList<>(animalList);
         saybleList.add(radio);
         
         return saybleList;
