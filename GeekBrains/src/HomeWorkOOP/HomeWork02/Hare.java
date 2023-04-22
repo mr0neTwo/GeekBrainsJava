@@ -2,8 +2,8 @@ package HomeWorkOOP.HomeWork02;
 
 public class Hare extends Herbivores implements IWalk {
 
-    public Hare(String name) {
-        super(name);
+    public Hare(String name, int weight) {
+        super(name, weight);
     }
 
     @Override

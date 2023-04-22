@@ -2,8 +2,8 @@ package HomeWorkOOP.HomeWork02;
 
 public class Penguin extends Waterfowl implements ISwim {
 
-    public Penguin(String name) {
-        super(name);
+    public Penguin(String name, int weight) {
+        super(name, weight);
     }
 
     @Override

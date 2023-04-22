@@ -2,8 +2,8 @@ package HomeWorkOOP.HomeWork02;
 
 public class Wolf extends Predator implements IWalk {
 
-    public Wolf(String name) {
-        super(name);
+    public Wolf(String name, int weight) {
+        super(name, weight);
     }
 
     @Override

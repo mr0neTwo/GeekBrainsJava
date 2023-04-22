@@ -1,5 +1,8 @@
 package HomeWorkOOP.HomeWork02;
 
+import java.util.Collections;
+import java.util.List;
+
 public class HomeWork02 {
 
     /**
@@ -11,19 +14,19 @@ public class HomeWork02 {
     
     public static void main(String[] args) {
         Zoo zoo = new Zoo();
-        zoo.addAnimal(new Wolf("Wolf"));
-        zoo.addAnimal(new Hare("Hare"));
-        zoo.addAnimal(new Duck("Donald"));
-        zoo.addAnimal(new Bat("Man"));
-        zoo.addAnimal(new Penguin("Max"));
-        zoo.addAnimal(new Dolphin("Pen"));
+        zoo.addAnimal(new Wolf("Wolf", 45));
+        zoo.addAnimal(new Hare("Hare", 8));
+        zoo.addAnimal(new Duck("Donald", 12));
+        zoo.addAnimal(new Bat("Man", 1));
+        zoo.addAnimal(new Penguin("Max", 120));
+        zoo.addAnimal(new Dolphin("Pen", 180));
 
-        for (Animal animal: zoo.animalList) {
+        for (Animal animal: zoo) {
             System.out.println(animal);
         }
 
         System.out.println();
-        for (Animal animal: zoo.animalList) {
+        for (Animal animal: zoo) {
             System.out.println(animal.say());
         }
         
@@ -55,5 +58,20 @@ public class HomeWork02 {
         System.out.println();
         System.out.println("Самое быстрое плавающее:");
         System.out.println(zoo.fastestSwimming());
+
+        System.out.println();
+        System.out.println("Сортируем список животных по весу:");
+        List<Animal> listAnimals = zoo.toList();
+        Collections.sort(listAnimals);
+        for (Animal animal: listAnimals) {
+            System.out.println(animal);
+        }
+
+        System.out.println();
+        System.out.println("Сортируем список животных по имени:");
+        listAnimals.sort((a, b) -> a.getName().compareTo(b.getName()));
+        for (Animal animal: listAnimals) {
+            System.out.println(animal);
+        }
     }
 }

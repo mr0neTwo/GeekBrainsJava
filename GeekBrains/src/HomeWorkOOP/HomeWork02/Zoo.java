@@ -1,9 +1,10 @@
 package HomeWorkOOP.HomeWork02;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class Zoo {
+public class Zoo implements Iterable<Animal> {
 
     List<Animal> animalList = new ArrayList<>();
     private Radio radio;
@@ -74,6 +75,31 @@ public class Zoo {
             }
         }
         return (Animal) fastestSwimming;
+    }
+    
+    public List<Animal> toList() {
+        
+        List<Animal> listAnimal = new ArrayList<>();
+        for (Animal animal: this) {
+            listAnimal.add(animal);
+        }
+        return listAnimal;
+    }
+    
+    @Override
+    public Iterator<Animal> iterator() {
+        return new Iterator<>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < animalList.size();
+            }
+
+            @Override
+            public Animal next() {
+                return animalList.get(index++);
+            }
+        };
     }
 }
 

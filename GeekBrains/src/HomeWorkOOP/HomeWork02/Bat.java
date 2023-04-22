@@ -2,8 +2,8 @@ package HomeWorkOOP.HomeWork02;
 
 public class Bat extends Predator implements IFly {
 
-    public Bat(String name) {
-        super(name);
+    public Bat(String name, int weigth) {
+        super(name, weigth);
     }
 
     @Override

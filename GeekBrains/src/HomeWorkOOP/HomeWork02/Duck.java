@@ -1,9 +1,9 @@
 package HomeWorkOOP.HomeWork02;
 
-public class Duck extends Herbivores implements IFly, IWalk {
+public class Duck extends Herbivores implements IFly, IWalk, ISwim {
 
-    public Duck(String name) {
-        super(name);
+    public Duck(String name, int weight) {
+        super(name, weight);
     }
 
     @Override
@@ -19,6 +19,11 @@ public class Duck extends Herbivores implements IFly, IWalk {
     @Override
     public int walkSpeed() {
         return 2;
+    }
+
+    @Override
+    public int swimSpeed() {
+        return 5;
     }
 
     @Override
