@@ -1,7 +1,7 @@
 package HomeWorkOOP.HomeWork03;
 
 public class Node<T> {
-    private T data;
+    private final T data;
 
     public Node<T> next;
 
