@@ -44,6 +44,22 @@ public class Team <T extends Warrior>{
         return max;
     }
 
+    public float getMinShield(){
+        float min = Float.MAX_VALUE;
+
+        for (T member: team){
+            if(member.shield != null){
+                if(member.shield.getStrength() < min){
+                    min = member.shield.getStrength();
+                }
+            } else {
+                return 0;
+            }
+        }
+
+        return min;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -51,7 +67,7 @@ public class Team <T extends Warrior>{
             stringBuilder.append(member);
             stringBuilder.append("\n");
         }
-        stringBuilder.append(String.format("teamHealth: %s, teamDamage: %s, maxRange: %s", getHealthPoints(), getDamages(), getMaxRange()));
+        stringBuilder.append(String.format("teamHealth: %s, teamDamage: %s, maxRange: %s, minShield: %.1f", getHealthPoints(), getDamages(), getMaxRange(), getMinShield()));
         return stringBuilder.toString();
     }
 }

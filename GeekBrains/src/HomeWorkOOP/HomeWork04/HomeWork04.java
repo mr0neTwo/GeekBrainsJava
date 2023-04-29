@@ -22,7 +22,7 @@ public class HomeWork04 {
         Assasin one = new Assasin("Ezio Auditore da Firenze", 40, new Knife());
         Archer two = new Archer("Jaime Lannister", 30,  new Bow(), new WoodenShield());
         Battle battle = new Battle(one, two);
-        Archer winner = (Archer) battle.fight();
+        Warrior winner = battle.fight();
         
         System.out.println();
         System.out.println("Winner:");
