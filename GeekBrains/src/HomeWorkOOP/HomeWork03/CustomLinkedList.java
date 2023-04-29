@@ -44,7 +44,7 @@ public class CustomLinkedList<T> implements Iterable<Node<T>> {
             this.current_node = this.current_node.next;
             return node;
         }
-        
+
     }
 }
 
