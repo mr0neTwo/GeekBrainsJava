@@ -22,7 +22,7 @@ public class RepositoryFile implements Repository {
     }
 
     @Override
-    public String CreateUser(User user) {
+    public void CreateUser(User user) {
 
         List<User> users = getAllUsers();
         int max = 0;
@@ -37,7 +37,6 @@ public class RepositoryFile implements Repository {
         user.setId(id);
         users.add(user);
         saveAllUsers(users);
-        return id;
     }
 
     @Override

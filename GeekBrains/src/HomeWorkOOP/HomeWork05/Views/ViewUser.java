@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ViewUser {
-    private UserController userController;
-    private ValidateData validate = new ValidateData();
+    private final UserController userController;
+    private final ValidateData validate = new ValidateData();
 
     public ViewUser(UserController userController) {
         this.userController = userController;
