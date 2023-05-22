@@ -55,6 +55,11 @@ public class RepositoryFile implements Repository {
     @Override
     public void deleteUser(String id) {
         List<User> users = this.getAllUsers();
+        for (User user : users) {
+            if(user.getId().equals(id)){
+               users.remove(user);
+            }
+        }
         users.removeIf(user -> user.getId().equals(id));
         saveAllUsers(users);
     }
