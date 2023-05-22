@@ -1,7 +1,7 @@
 package HomeWorkOOP.HomeWork06;
 
 public class Persister implements ISave{
-	private User user;
+	private final User user;
 	
 	public Persister(User user){
 		this.user = user;
